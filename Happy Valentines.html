@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Surprise</title>
+    <style>
+        body {
+            margin: 0;
+            background: #ffe6f2;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Heart Animation */
+        .heart {
+            position: absolute;
+            width: 200px;  /* Larger heart size */
+            height: 180px;
+            animation: heartBeat 1.5s ease-in-out, fadeOut 2s ease 2s forwards;
+            opacity: 1;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 105px;
+            height: 160px;
+            border-radius: 50px 50px 0 0;
+            background: #ff3366;
+        }
+
+        .heart::before {
+            left: 105px;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .heart::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        @keyframes heartBeat {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+        }
+
+        /* Letter Section */
+        .letter {
+            display: none;
+            max-width: 900px;
+            width: 80%;
+            max-height: 80vh; /* Ensures content does not exceed viewport height */
+            overflow-y: auto; /* Enables scrolling if content overflows */
+            margin: 50px auto;
+            padding: 30px; /* Adjust padding for better fit */
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            transform: translateY(50px);
+            opacity: 0;
+            animation: letterReveal 1s ease 2.5s forwards;
+            text-align: center;
+            font-size: 1.5rem; /* Reduce font size for better fit */
+            line-height: 1.4; /* Adjust line height for readability */
+        }
+
+        .letter-content {
+            max-height: 100%;
+            overflow-y: auto; /* Ensures long text is scrollable */
+        }
+
+        .letter-photo {
+            width: 300px; /* Larger image size */
+            height: 300px;
+            border-radius: 50%;
+            margin: 0 auto 40px;
+            background: #ddd;
+            overflow: hidden;
+        }
+
+        @keyframes letterReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center; /* Keeps buttons centered */
+            align-items: center;
+            gap: 20px; /* Adds space between buttons */
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .btn {
+            background-color: #ff3366;
+            color: white;
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            position: relative; /* Prevents absolute positioning issues */
+        }
+
+        .btn:active {
+            transform: scale(0.9);
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        #noBtn {
+            position: absolute;
+            transition: transform 0.3s ease, left 0.3s ease, top 0.3s ease;
+        }
+
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                justify-content: flex-start;
+                padding-top: 20px;
+            }
+
+            .letter {
+                width: 90%; /* Increased size for mobile */
+                margin: 20px;
+                padding: 40px;
+                font-size: 1.8rem; /* Large font size for mobile */
+            }
+
+            .letter-photo {
+                width: 250px;
+                height: 250px;
+            }
+
+            .heart {
+                width: 160px; /* Adjusted size for mobile */
+                height: 144px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart"></div> <!-- Only one heart in the center -->
+
+    <div class="letter">
+        <div class="letter-photo">
+            <!-- Replace with your image URL -->
+            <img src="https://cdn.discordapp.com/attachments/1212056621908238377/1338147387931365397/image.png?ex=67aa065e&is=67a8b4de&hm=384dfccfd635c461f36a765f797866aa6acac1599922e8f0b2aa6ddcb1100aba&" alt="Special Photo" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="letter-content">
+            <h2>Hi Mahal,</h2>
+            <p>Gusto kong simulan tong sulat nato sa pag sabi kung gaano ako kasaya na dumating ka sa buhay ko. Nung una wala naman talaga akong ineexpect na something na ganto kadeep kung anong meron tayo ngayon. Pero ikaw? iba ka talagang binago mo yung buhay ko nung dumating ka. Mas naging lively mas naging masaya ako at meron pa palang ikakukumpleto yung buhay ko nuon. Simula nung dumating ka mas madalas na kong nakangiti mas gusto ko na kitang laging kasama at ayaw na kitang mawala pa sa tabi ko. Nuon sobrang babaw lang siguro ng rason ko kung bakit kita nagustuhan pero umabot na tayo sa punto na yung thought palang na mawawala ka sa buhay ko grabe na ang takot ko; utot na ko ng utot. Sobrang thankful ko at dumating ka sa buhay ko sobrang grateful ko sa lahat ng bagay na ginagawa mo sakin, ngayon ko lang nalaman na worth it din pala akong pag effortan kahit mukha akong bulbol o tubol. Ikaw lang nakapag paramdam saking special ako kaya maraming salamat at pinaranas mo sakin ang maging importante. Hindi biro yung tagal ng pinag samahan natin mag aapat na taon na tayo mahal ko at mas lalo pang lumalalim yung pag mamahal ko para sayo. Ayoko nang mawalay pa sakin lalo na ngayon ang cravings ko ay itanan ka; gusto ko nalang bumukod kasama ka. Gusto ko nang magsimula ng panibagong yugto ng buhay ko na tayong dalawa lang. Balang araw matutupad din yan, pero sa ngayon enjoyin muna natin kung anong meron satin ngayon. Mahal na mahal kita Michelle at wala na kong nakikita pang ibang babae na makakasama ko pang habang buhay at sa susunod na habang buhay. Pero sa papalapit na importanteng araw para sa buhay mo at buhay nating dalawa.</p>
+            <p>Will You Still Be My Valentine?</p>
+            <p>Michelle Anne Ortega</p>
+        </div>
+
+        <div class="button-container">
+            <button class="btn" id="yesBtn">Yes</button>
+            <button class="btn" id="noBtn">No</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const heart = document.querySelector(".heart");
+    const letter = document.querySelector(".letter");
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+
+    // Show heart animation and reveal letter after delay
+    setTimeout(() => {
+        heart.style.animation = "heartBeat 1.5s ease-in-out, fadeOut 2s ease 2s forwards";
+    }, 100);
+
+    setTimeout(() => {
+        letter.style.display = "block";
+    }, 1000);
+
+    // Function to move "No" button within the center area
+    function moveNoButton() {
+        const container = document.querySelector(".button-container");
+        const btnWidth = noBtn.offsetWidth;
+        const btnHeight = noBtn.offsetHeight;
+        
+        // Get container bounds to limit movement
+        const containerRect = container.getBoundingClientRect();
+        const maxX = (containerRect.width / 2) - btnWidth / 2; // Stay within center
+        const maxY = 40; // Small vertical movement only
+
+        // Generate new random position within limits
+        const randomX = (Math.random() - 0.5) * maxX;
+        const randomY = (Math.random() - 0.5) * maxY;
+
+        noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+    }
+
+    // Move "No" button when clicked (not on hover)
+    noBtn.addEventListener("click", moveNoButton);
+
+    // Confirm selection on "Yes" button click
+    yesBtn.addEventListener("click", function () {
+        alert("Yay! You said Yes! ❤️");
+    });
+});
+
+    </script>
+</body>
+</html>
